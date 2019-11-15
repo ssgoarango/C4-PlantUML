@@ -1,6 +1,6 @@
-!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4.puml
+' !include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4.puml
 ' uncomment the following line and comment the first to use locally
-' !include C4.puml
+!include C4.puml
 
 ' Scope: A single software system.
 ' Primary elements: The software system in scope.
@@ -10,121 +10,121 @@
 ' Colors
 ' ##################################
 
-!global $PERSON_BG_COLOR = "#08427B"
-!global $EXTERNAL_PERSON_BG_COLOR = "#686868"
+!global $PERSON_BG_COLOR = "#MediumBlue"
+!global $ACTUAL_PERSON_BG_COLOR = "#LightGray"
 !global $SYSTEM_BG_COLOR = "#1168BD"
-!global $EXTERNAL_SYSTEM_BG_COLOR = "#999999"
+!global $ACTUAL_SYSTEM_BG_COLOR = "#999999"
 
 ' Styling
 ' ##################################
 
-skinparam rectangle<<person>> {
-StereotypeFontColor $ELEMENT_FONT_COLOR
-FontColor $ELEMENT_FONT_COLOR
-BackgroundColor $PERSON_BG_COLOR
-BorderColor #073B6F
+skinparam actor<<persona>> {
+	StereotypeFontColor $PERSON_BG_COLOR
+	'FontColor $ELEMENT_FONT_COLOR
+	BackgroundColor $PERSON_BG_COLOR
+	BorderColor #Navy
 }
 
-skinparam rectangle<<external_person>> {
-StereotypeFontColor $ELEMENT_FONT_COLOR
-FontColor $ELEMENT_FONT_COLOR
-BackgroundColor $EXTERNAL_PERSON_BG_COLOR
-BorderColor #8A8A8A
+skinparam actor<<actual_persona>> {
+	StereotypeFontColor $ACTUAL_PERSON_BG_COLOR
+	'FontColor #Black
+	BackgroundColor $ACTUAL_PERSON_BG_COLOR
+	BorderColor #Silver
 }
 
-skinparam rectangle<<system>> {
-StereotypeFontColor $ELEMENT_FONT_COLOR
-FontColor $ELEMENT_FONT_COLOR
-BackgroundColor $SYSTEM_BG_COLOR
-BorderColor #3C7FC0
+skinparam rectangle<<sistema>> {
+	StereotypeFontColor $ELEMENT_FONT_COLOR
+	FontColor $ELEMENT_FONT_COLOR
+	BackgroundColor $SYSTEM_BG_COLOR
+	BorderColor #3C7FC0
 }
 
-skinparam rectangle<<external_system>> {
-StereotypeFontColor $ELEMENT_FONT_COLOR
-FontColor $ELEMENT_FONT_COLOR
-BackgroundColor $EXTERNAL_SYSTEM_BG_COLOR
-BorderColor #8A8A8A
+skinparam rectangle<<actual_sistema>> {
+	StereotypeFontColor $ELEMENT_FONT_COLOR
+	FontColor $ELEMENT_FONT_COLOR
+	BackgroundColor $ACTUAL_SYSTEM_BG_COLOR
+	BorderColor #8A8A8A
 }
 
-skinparam database<<system>> {
-StereotypeFontColor $ELEMENT_FONT_COLOR
-FontColor $ELEMENT_FONT_COLOR
-BackgroundColor $SYSTEM_BG_COLOR
-BorderColor #3C7FC0
+skinparam database<<sistema>> {
+	StereotypeFontColor $ELEMENT_FONT_COLOR
+	FontColor $ELEMENT_FONT_COLOR
+	BackgroundColor $SYSTEM_BG_COLOR
+	BorderColor #3C7FC0
 }
 
-skinparam database<<external_system>> {
-StereotypeFontColor $ELEMENT_FONT_COLOR
-FontColor $ELEMENT_FONT_COLOR
-BackgroundColor $EXTERNAL_SYSTEM_BG_COLOR
-BorderColor #8A8A8A
+skinparam database<<actual_sistema>> {
+	StereotypeFontColor $ELEMENT_FONT_COLOR
+	FontColor $ELEMENT_FONT_COLOR
+	BackgroundColor $ACTUAL_SYSTEM_BG_COLOR
+	BorderColor #8A8A8A
 }
 
 ' Layout
 ' ##################################
 
 !function LAYOUT_WITH_LEGEND()
-hide stereotype
-legend right
-|=              |= Type |
-|<$PERSON_BG_COLOR>      | person |
-|<$EXTERNAL_PERSON_BG_COLOR>      | external person |
-|<$SYSTEM_BG_COLOR>   | system |
-|<$EXTERNAL_SYSTEM_BG_COLOR>      | external system |
-endlegend
+	hide stereotype
+	legend right
+	|=              |= Tipo |
+	|<$PERSON_BG_COLOR>      | persona |
+	|<$ACTUAL_PERSON_BG_COLOR>      | persona actual |
+	|<$SYSTEM_BG_COLOR>   | sistema |
+	|<$ACTUAL_SYSTEM_BG_COLOR>      | sistema actual |
+	endlegend
 !endfunction
 
 ' Elements
 ' ##################################
 
 !unquoted function Person($alias, $label)
-rectangle "==$label" <<person>> as $alias
+	actor "==$label" <<persona>> as $alias
 !endfunction
 !unquoted function Person($alias, $label, $descr)
-rectangle "==$label\n\n $descr" <<person>> as $alias
+	actor "==$label\n\n $descr" <<persona>> as $alias
 !endfunction
 
 !unquoted function Person_Ext($alias, $label)
-rectangle "==$label" <<external_person>> as $alias
+	actor "==$label" <<actual_persona>> as $alias
 !endfunction
 !unquoted function Person_Ext($alias, $label, $descr)
-rectangle "==$label\n\n $descr" <<external_person>> as $alias
+	actor "==$label\n\n $descr" <<actual_persona>> as $alias
 !endfunction
 
 !unquoted function System($alias, $label)
-rectangle "==$label" <<system>> as $alias
+	rectangle "==$label" <<sistema>> as $alias
 !endfunction
 !unquoted function System($alias, $label, $descr)
-rectangle "==$label\n\n $descr" <<system>> as $alias
+	rectangle "==$label\n\n $descr" <<sistema>> as $alias
 !endfunction
 
 !unquoted function System_Ext($alias, $label)
-rectangle "==$label" <<external_system>> as $alias
+	rectangle "==$label" <<actual_sistema>> as $alias
 !endfunction
 !unquoted function System_Ext($alias, $label, $descr)
-rectangle "==$label\n\n $descr" <<external_system>> as $alias
+	rectangle "==$label\n\n $descr" <<actual_sistema>> as $alias
 !endfunction
 
 !unquoted function SystemDb($alias, $label)
-database "==$label" <<system>> as $alias
+	database "==$label" <<sistema>> as $alias
 !endfunction
 !unquoted function SystemDb($alias, $label, $descr)
-database "==$label\n\n $descr" <<system>> as $alias
+	database "==$label\n\n $descr" <<sistema>> as $alias
 !endfunction
 
 !unquoted function SystemDb_Ext($alias, $label)
-database "==$label" <<external_system>> as $alias
+	database "==$label" <<actual_sistema>> as $alias
 !endfunction
-!unquoted function SystemDb_ext($alias, $label, $descr)
-database "==$label\n\n $descr" <<external_system>> as $alias
+!unquoted function SystemDb_Ext($alias, $label, $descr)
+	database "==$label\n\n $descr" <<actual_sistema>> as $alias
 !endfunction
 
 ' Boundaries
 ' ##################################
 
 !unquoted function Enterprise_Boundary($alias, $label)
-!return Boundary($alias, $label, "Enterprise")
+	!return Boundary($alias, $label, "Organización")
 !endfunction
 !unquoted function System_Boundary($alias, $label)
-!return Boundary($alias, $label, "System")
+	!return Boundary($alias, $label, "Sistema")
 !endfunction

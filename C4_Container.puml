@@ -1,6 +1,6 @@
-!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Context.puml
+' !include https://raw.githubusercontent.com/ssgoarango/C4-PlantUML/latest/C4_Context.puml
 ' uncomment the following line and comment the first to use locally
-' !include C4_Context.puml
+!include C4_Context.puml
 
 ' Scope: A single software system.
 ' Primary elements: Containers within the software system in scope.
@@ -15,14 +15,14 @@
 ' Styling
 ' ##################################
 
-skinparam rectangle<<container>> {
+skinparam rectangle<<contenedor>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
     BackgroundColor $CONTAINER_BG_COLOR
     BorderColor #3C7FC0
 }
 
-skinparam database<<container>> {
+skinparam database<<contenedor>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
     BackgroundColor $CONTAINER_BG_COLOR
@@ -48,22 +48,22 @@ endlegend
 ' ##################################
 
 !unquoted function Container($alias, $label, $techn)
-rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<container>> as $alias
+rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<contenedor>> as $alias
 !endfunction
 !unquoted function Container($alias, $label, $techn, $descr)
-rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<container>> as $alias
+rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<contenedor>> as $alias
 !endfunction
 
 !unquoted function ContainerDb($alias, $label, $techn)
-database "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<container>> as $alias
+database "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<contenedor>> as $alias
 !endfunction
 !unquoted function ContainerDb($alias, $label, $techn, $descr)
-database "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<container>> as $alias
+database "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<contenedor>> as $alias
 !endfunction
 
 ' Boundaries
 ' ##################################
 
 !unquoted function Container_Boundary($alias, $label)
-!return Boundary($alias, $label, "Container")
+!return Boundary($alias, $label, "Contenedor")
 !endfunction
