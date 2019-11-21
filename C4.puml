@@ -39,7 +39,7 @@ skinparam Arrow {
     FontSize 12
 }
 
-skinparam rectangle<<contenedor>> {
+skinparam rectangle<<frontera>> {
     Shadowing false
     StereotypeFontSize 0
     FontColor #444444
@@ -69,10 +69,10 @@ skinparam rectangle<<contenedor>> {
 ' ##################################
 
 !unquoted function Boundary($alias, $label)
-	!return 'rectangle "=='+$label+'" <<contenedor>> as '+$alias
+	!return 'rectangle "=='+$label+'" <<frontera>> as '+$alias
 !endfunction
 !unquoted function Boundary($alias, $label, $type)
-	!return 'rectangle "=='+$label+'\n<size:'+$TECHN_FONT_SIZE+'>['+$type+']</size>" <<contenedor>> as '+$alias
+	!return 'rectangle "=='+$label+'\n<size:'+$TECHN_FONT_SIZE+'>['+$type+']</size>" <<frontera>> as '+$alias
 !endfunction
 
 ' Relationship

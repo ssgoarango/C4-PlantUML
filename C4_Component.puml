@@ -37,9 +37,9 @@ hide stereotype
 legend right
 |=              |= Tipo |
 |<$PERSON_BG_COLOR>      | persona |
-|<$EXTERNAL_PERSON_BG_COLOR>      | persona actual |
+|<$EXTERNAL_PERSON_BG_COLOR>      | persona ext |
 |<$SYSTEM_BG_COLOR>   | sistema |
-|<$EXTERNAL_SYSTEM_BG_COLOR>      | sistema actual |
+|<$EXTERNAL_SYSTEM_BG_COLOR>      | sistema ext |
 |<$CONTAINER_BG_COLOR>   | contenedor |
 |<$COMPONENT_BG_COLOR>   | componente |
 endlegend
