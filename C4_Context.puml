@@ -25,7 +25,7 @@ skinparam actor<<persona>> {
 	BorderColor #Navy
 }
 
-skinparam actor<<actual_persona>> {
+skinparam actor<<persona_ext>> {
 	StereotypeFontColor $ACTUAL_PERSON_BG_COLOR
 	'FontColor #Black
 	BackgroundColor $ACTUAL_PERSON_BG_COLOR
@@ -39,7 +39,7 @@ skinparam rectangle<<sistema>> {
 	BorderColor #3C7FC0
 }
 
-skinparam rectangle<<actual_sistema>> {
+skinparam rectangle<<sistema_ext>> {
 	StereotypeFontColor $ELEMENT_FONT_COLOR
 	FontColor $ELEMENT_FONT_COLOR
 	BackgroundColor $ACTUAL_SYSTEM_BG_COLOR
@@ -53,7 +53,7 @@ skinparam database<<sistema>> {
 	BorderColor #3C7FC0
 }
 
-skinparam database<<actual_sistema>> {
+skinparam database<<sistema_ext>> {
 	StereotypeFontColor $ELEMENT_FONT_COLOR
 	FontColor $ELEMENT_FONT_COLOR
 	BackgroundColor $ACTUAL_SYSTEM_BG_COLOR
@@ -68,9 +68,9 @@ skinparam database<<actual_sistema>> {
 	legend right
 	|=              |= Tipo |
 	|<$PERSON_BG_COLOR>      | persona |
-	|<$ACTUAL_PERSON_BG_COLOR>      | persona actual |
+	|<$ACTUAL_PERSON_BG_COLOR>      | persona ext |
 	|<$SYSTEM_BG_COLOR>   | sistema |
-	|<$ACTUAL_SYSTEM_BG_COLOR>      | sistema actual |
+	|<$ACTUAL_SYSTEM_BG_COLOR>      | sistema ext |
 	endlegend
 !endfunction
 
@@ -85,10 +85,10 @@ skinparam database<<actual_sistema>> {
 !endfunction
 
 !unquoted function Person_Ext($alias, $label)
-	actor "==$label" <<actual_persona>> as $alias
+	actor "==$label" <<persona_ext>> as $alias
 !endfunction
 !unquoted function Person_Ext($alias, $label, $descr)
-	actor "==$label\n\n $descr" <<actual_persona>> as $alias
+	actor "==$label\n\n $descr" <<persona_ext>> as $alias
 !endfunction
 
 !unquoted function System($alias, $label)
@@ -99,10 +99,10 @@ skinparam database<<actual_sistema>> {
 !endfunction
 
 !unquoted function System_Ext($alias, $label)
-	rectangle "==$label" <<actual_sistema>> as $alias
+	rectangle "==$label" <<sistema_ext>> as $alias
 !endfunction
 !unquoted function System_Ext($alias, $label, $descr)
-	rectangle "==$label\n\n $descr" <<actual_sistema>> as $alias
+	rectangle "==$label\n\n $descr" <<sistema_ext>> as $alias
 !endfunction
 
 !unquoted function SystemDb($alias, $label)
@@ -113,10 +113,10 @@ skinparam database<<actual_sistema>> {
 !endfunction
 
 !unquoted function SystemDb_Ext($alias, $label)
-	database "==$label" <<actual_sistema>> as $alias
+	database "==$label" <<sistema_ext>> as $alias
 !endfunction
 !unquoted function SystemDb_Ext($alias, $label, $descr)
-	database "==$label\n\n $descr" <<actual_sistema>> as $alias
+	database "==$label\n\n $descr" <<sistema_ext>> as $alias
 !endfunction
 
 ' Boundaries
