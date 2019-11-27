@@ -54,7 +54,7 @@ skinparam rectangle<<entorno>> {
 	skinparam backgroundColor #EEEBDC
 	skinparam handwritten true
 	skinparam defaultFontName "Comic Sans MS"
-	center footer <font color=red>Advertencia:</font> Creado para su discusión, requiere ser validado
+	center footer <font color=red>Advertencia:</font> Creado para su discusión, ¡requiere ser validado!
 !endfunction
 
 !function LAYOUT_TOP_DOWN()
